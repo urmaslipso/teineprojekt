@@ -1,0 +1,11 @@
+/*
+    Document   : styles
+    Created on : Jul 16, 2013, 10:32:48 PM
+    Author     : Sven Varkel <sven.varkel@eepohs.com>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.success-icon, .form-list td.success-icon{
+    background: url('../images/success_msg_icon.gif') right center no-repeat transparent !important;
+}

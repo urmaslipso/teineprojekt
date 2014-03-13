@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <default>
+        <reference name="before_body_end">
+            <block type="mageflow_connect/adminhtml_page_head" name="mageflow_js_container" as="mageflow_js_container" template="mageflow/js.phtml">
+            </block>
+        </reference>
+        <block type="mageflow_connect/adminhtml_initjs" name="mageflow_connect_initjs" />
+    </default>
+    <mageflow_connect_ajax_index>
+        <block type="core/block" name="root" output="toHtml" />
+    </mageflow_connect_ajax_index>
+    <adminhtml_system_config_edit>
+
+    </adminhtml_system_config_edit>
+</layout>

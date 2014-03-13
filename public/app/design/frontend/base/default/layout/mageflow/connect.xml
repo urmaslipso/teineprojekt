@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <default>
+        <reference name="before_body_end">
+            <!-- Do not remove this block or MageFlow cannot detect your Magento store properly -->
+            <block type="core/template" name="mageflow_tag" template="mageflow/tag.phtml" />
+        </reference>
+    </default>
+</layout>

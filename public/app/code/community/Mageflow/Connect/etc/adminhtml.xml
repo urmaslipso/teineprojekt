@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * MageFlow Connector Magento extension adminhtml configuration file
+ *
+ * PLEASE READ THIS SOFTWARE LICENSE AGREEMENT ("LICENSE") CAREFULLY
+ * BEFORE USING THE SOFTWARE. BY USING THE SOFTWARE, YOU ARE AGREEING
+ * TO BE BOUND BY THE TERMS OF THIS LICENSE.
+ * IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENSE, DO NOT USE THE SOFTWARE.
+ *
+ * Full text of this license is available @license
+ *
+ * @license    http://mageflow.com/licenses/mfx/eula.txt MageFlow EULA
+ * @version    1.0
+ * @author     MageFlow
+ * @copyright  2014 MageFlow http://mageflow.com/
+ *
+ * @package    Mageflow
+ * @subpackage Connect
+ * @category   Mageflow
+ */
+-->
+<config>
+    <menu>
+        <mageflow translate="title" module="mageflow_connect">
+            <title>MageFlow</title>
+            <sort_order>100</sort_order>
+            <children>
+                <mageflow_connect_migrate>
+                    <title>Push Change Sets</title>
+                    <action>mageflow_connect/migrate/index</action>
+                    <sort_order>5</sort_order>
+                </mageflow_connect_migrate>
+                <mageflow_connect_pull>
+                    <title>Pull Change Sets</title>
+                    <action>mageflow_connect/pullgrid/index</action>
+                    <sort_order>5</sort_order>
+                </mageflow_connect_pull>
+                <mageflow_connect_configure>
+                    <title>Connect</title>
+                    <action>adminhtml/system_config/edit/section/mageflow_connect/</action>
+                    <sort_order>20</sort_order>
+                </mageflow_connect_configure>
+            </children>
+        </mageflow>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <mageflow>
+                        <children>
+                            <mageflow_connect_migrate>
+                                <title>Enable content and config migration?</title>
+                            </mageflow_connect_migrate>
+                        </children>
+                    </mageflow>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <mageflow_connect>
+                                        <title>MageFlow Connect Configuration</title>
+                                    </mageflow_connect>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

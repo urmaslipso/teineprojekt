@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * MageFlow Connector Magento extension system configuration file
+ *
+ * PLEASE READ THIS SOFTWARE LICENSE AGREEMENT ("LICENSE") CAREFULLY
+ * BEFORE USING THE SOFTWARE. BY USING THE SOFTWARE, YOU ARE AGREEING
+ * TO BE BOUND BY THE TERMS OF THIS LICENSE.
+ * IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENSE, DO NOT USE THE SOFTWARE.
+ *
+ * Full text of this license is available @license
+ *
+ * @license    http://mageflow.com/licenses/mfx/eula.txt MageFlow EULA
+ * @version    1.0
+ * @author     MageFlow
+ * @copyright  2014 MageFlow http://mageflow.com/
+ *
+ * @package    Mageflow
+ * @subpackage Connect
+ * @category   Mageflow
+ */
+-->
+<config>
+    <tabs>
+        <mageflow translate="label" module="mageflow_connect">
+            <label>MageFlow</label>
+            <sort_order>10</sort_order>
+        </mageflow>
+    </tabs>
+    <sections>
+        <mageflow_connect>
+            <label>MageFlow Connector</label>
+            <tab>mageflow</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <api translate="label">
+                    <frontend_type>text</frontend_type>
+                    <label>MageFlow API settings</label>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>API connection enabled?</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </enabled>
+                        <consumer_key translate="label">
+                            <label>API consumer key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_class>validate-connect</frontend_class>
+                        </consumer_key>
+                        <consumer_secret translate="label">
+                            <label>API consumer secret</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_class>validate-connect</frontend_class>
+                        </consumer_secret>
+                        <token translate="label">
+                            <label>API token</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_class>validate-connect</frontend_class>
+                        </token>
+                        <token_secret translate="label">
+                            <label>API token secret</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_class>validate-connect</frontend_class>
+                        </token_secret>
+                        <connect_button translate="label">
+                            <frontend_type>export</frontend_type>
+                            <frontend_model>mageflow_connect/system_config_api_connectbutton</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </connect_button>
+                        <company translate="label">
+                            <label>Company</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <source_model>mageflow_connect/system_config_api_companylist</source_model>
+                            <frontend_class>disabled mageflow-disabled-field</frontend_class>
+                            <comment>
+                                <![CDATA[
+                                Select company that you want your Magento Instance to be connected to.
+                                <b>Click "Connect MageFlow API"</b> button above to (re)load the list of your companies.
+                                ]]>
+                            </comment>
+                        </company>
+                        <project translate="label">
+                            <label>Project</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <!--<source_model>mageflow_connect/system_config_api_emptylist</source_model>-->
+                            <frontend_class>disabled mageflow-disabled-field</frontend_class>
+                            <comment>
+                                <![CDATA[
+                                Select company's project that you want your Magento Instance to be connected to.
+                                ]]>
+                            </comment>
+                        </project>
+                        <instance_key translate="label">                                                        
+                            <label>Current Magento Instance key</label>
+                            <frontend_type>text</frontend_type>                                                        
+                            <sort_order>80</sort_order>                                                        
+                            <show_in_default>1</show_in_default>                                                        
+                            <show_in_website>0</show_in_website>                                                        
+                            <show_in_store>0</show_in_store>
+                            <frontend_class>disabled read-only mageflow-disabled-field</frontend_class>                                                        
+                            <comment>
+                                <![CDATA[
+                                The Magento Instance key is unique to each instance. This value is pulled from MageFlow API
+                                after successful connection. There's no need to change that manually and
+                                it's here just for your reference.
+                                ]]>
+                            </comment>
+                        </instance_key>
+                        <oauth_button>
+                            <frontend_type>Button</frontend_type>
+                            <frontend_model>mageflow_connect/system_config_api_oauthbutton</frontend_model>
+                             <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </oauth_button>
+                        <instance_button>
+                            <frontend_type>Button</frontend_type>
+                            <frontend_model>mageflow_connect/system_config_api_instancebutton</frontend_model>
+                             <sort_order>79</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </instance_button>
+                    </fields>
+                </api>
+                <advanced translate="label">
+                    <frontend_type>text</frontend_type>
+                    <label>Advanced settings</label>
+                    <sort_order>200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <api_url translate="label">                                                        
+                            <label>API URL:</label>                                                     
+                            <frontend_type>text</frontend_type>                                                        
+                            <sort_order>10</sort_order>                                                        
+                            <show_in_default>1</show_in_default>                                                        
+                            <show_in_website>0</show_in_website>                                                        
+                            <show_in_store>0</show_in_store>
+                        </api_url>
+                        <log_enabled translate="label">                                                        
+                            <label>Logging enabled:</label>                                                     
+                            <frontend_type>select</frontend_type>                                                        
+                            <sort_order>20</sort_order>                                                        
+                            <show_in_default>1</show_in_default>                                                        
+                            <show_in_website>0</show_in_website>                                                        
+                            <show_in_store>0</show_in_store>                                                        
+                            <source_model>adminhtml/system_config_source_yesno</source_model>                                                    
+                        </log_enabled>
+                        <log_level translate="label">                                                        
+                            <label>Logging level:</label>                                                     
+                            <frontend_type>select</frontend_type>                                                        
+                            <sort_order>25</sort_order>                                                        
+                            <show_in_default>1</show_in_default>                                                        
+                            <show_in_website>0</show_in_website>                                                        
+                            <show_in_store>0</show_in_store>                                                        
+                            <source_model>mageflow_connect/system_config_api_levellist</source_model>
+                        </log_level>
+                        <log_lines>
+                            <label>Number of log lines</label>                                                     
+                            <frontend_type>text</frontend_type>                                                        
+                            <sort_order>30</sort_order>                                                        
+                            <show_in_default>1</show_in_default>                                                        
+                            <show_in_website>0</show_in_website>                                                        
+                            <show_in_store>0</show_in_store>
+                            <validate>validate-not-negative-number</validate>       
+                            <comment>
+                                <![CDATA[
+                                        This value specifies the number of lines from the end of the log files to be delivered via API.
+                                        MageFlow will deliver logs from the files that are defined under Advanced->Developer->Log Settings.
+                                        Be careful with very large values (<5000). Recommended and fail safe default
+                                        is 100.
+                                ]]>
+                            </comment>
+                                                 
+                        </log_lines>
+                    </fields>
+                </advanced>
+                <system translate="label">
+                    <label>System settings</label>
+                    <sort_order>300</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <maintenance_mode translate="label">
+                            <label>Maintenance mode enabled?</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <comment>
+                                <![CDATA[
+                                MageFlow switches on Maintenance Mode so that you will still be able to access
+                                Magento Backend (these pages here) while in the frontend "Under Maintenance"
+                                page is displayed.
+                                ]]>
+                            </comment>
+                        </maintenance_mode>
+                    </fields>
+                </system>
+            </groups>
+        </mageflow_connect>
+    </sections>
+</config>
